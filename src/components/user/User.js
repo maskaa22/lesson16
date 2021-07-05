@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import {getPosts} from "../../serveses/API";
-// import UserDeteils from "../user-deteils/UserDeteils";
 
 export default function User ({item, selectUser})
 {
@@ -8,7 +7,6 @@ export default function User ({item, selectUser})
     let [post, setPost] = useState([]);
     useEffect(()=> {
         getPosts(item.id).then( value => {
-            //console.log(value.data);
             setPost(value.data)
         })
     })
@@ -21,7 +19,7 @@ export default function User ({item, selectUser})
                 {
                     post.map(val => {
                         if (item.id===val.userId)
-                            //<UserDeteils itemDeteils={val}/>
+
                         {
                             console.log(val);
                         }
